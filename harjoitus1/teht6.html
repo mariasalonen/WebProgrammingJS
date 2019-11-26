@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8"/>
+        <title>Maria Salonen</title>
+    </head>
+    <body>
+        <h1>Taulukon [11, 22, 33 44] läpikäyntiä</h1>
+        <p>For- ja for...of -silmukoilla</p>
+        <hr>
+        
+        <p id="tulos"></p>
+        
+        <script>
+            var taulukko = [11,22,33,44];
+            var summa = 0;
+            var lkm = 0;
+            var ka;
+            var tulosrivit;
+            var text;
+    
+            for (var i of taulukko) {
+                lkm++;
+                }
+            console.log(lkm);
+            
+            for (var i of taulukko) {
+                summa += parseInt(taulukko[i]);
+                }
+            console.log(summa); //is NaN
+            
+            var i;
+            for (i = 0; i < taulukko.length; i++) { 
+                tulosrivit += taulukko[i];
+                text += tulosrivit;
+                }
+            console.log(tulosrivit);
+            
+            ka = summa/lkm;
+            ka.toFixed(2);
+            console.log(ka);
+            
+            document.getElementById("tulos").innerHTML = "Lukumäärä: " + lkm + "<br>" + "Summa: " + summa + "<br>" + "Keskiarvo: " + ka;
+        </script>
+    </body>
+</html>

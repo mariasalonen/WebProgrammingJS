@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Harjoitus 3 - Tehtävä 5</title>
+        <style>
+            #content{
+                margin-right: auto;
+                margin-left: auto;
+                width: 300px;
+                border: 1px solid black;
+                box-shadow: 5px 5px 5px black;
+                border-radius: 3px;
+                text-align: center;
+                font-family: sans-serif;
+                background-color: #BEFFFB;
+            }
+            h1{
+                text-align: center;
+                color:white;
+                text-shadow: 1px 1px 1px black;
+            }
+            ul{
+                background-color: #FFFBC4;
+            }
+        </style>
+
+    </head>
+    <body>
+        <div id="content">
+            <h1>To do -lista</h1>
+            <input id="uusi"/>
+            <button type="button" id="lisaa" onclick="lisaa();">Lisää</button><br/><br/>
+            <ul id="lista"></ul>
+            <button type="button" id="poista" onclick="poistaKaikki();">Tyhjennä lista</button><br/><br/>
+        </div>
+        
+        
+        <script>
+            //funktio lisää uuden elementin to do -listaan
+            function lisaa(){
+                
+                //haetaan käyttäjän syöttämä teksti muuttujan arvoksi
+                var uusi = document.getElementById("uusi").value;
+               
+                //luodaan uusi lista-elementti
+                var li = document.createElement("li");
+                //tehdään käyttäjän antamasta tekstistä tekstinode, joka lisätään li-elementin lapsielementiksi
+                var text = document.createTextNode(uusi);
+                li.appendChild(text);
+                //lisätään li-muuttuja "lista"-ul:n lapsielementiksi
+                document.getElementById("lista").appendChild(li);
+                //tyhjennetään input-kenttä asettamalla sen arvoksi tyhjä ja viedään kursori kenttään
+                document.getElementById("uusi").value = "";
+                document.getElementById("uusi").focus();
+              
+            }
+           let lista = document.getElementsByTagName("li");
+            lista.addEventListener("click", poistaYksi);
+            
+            function poistaKaikki(){
+                var lista = document.getElementById("lista");
+                while (lista.hasChildNodes()) {   
+                    lista.removeChild(lista.firstChild);
+                    }
+            }
+            
+            function poistaYksi()
+                {
+                var li = this.parentNode;     
+                li.parentNode.removeChild(li); 
+                    }
+ 
+            
+            
+        
+        </script>
+    </body>
+</html>

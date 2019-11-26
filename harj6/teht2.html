@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Breakout Game with Canvas animation using requestrAnimFrame</title>
+	<script src="Ball.js"></script>
+	<script src="Paddle.js"></script>
+	<script src="Block.js"></script>
+	<script src="Breakout.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+    <style>
+        h2{
+            font-family: "Arial Black", Gadget, sans-serif;
+            text-decoration: underline;
+            text-transform: uppercase;
+            position: relative;
+        }
+
+    </style>
+</head>
+
+<body onload="init(); moveText();">
+ 
+<h2 id="h2">Breakout Game</h2>
+<div id="canvas">
+	<canvas id="myCanvas" width="400" height="800" style="border:1px solid #000000; background-color: black;"></canvas> 
+</div>
+
+<div>
+	<button onclick="start_game()" id="startButton">Start a new Game</button>
+</div>
+    <script>
+        
+        function moveText(){
+            
+            $("#h2").animate({ "left": "+=150px" }, 1000 );
+            $("#h2").animate({ "top": "+=10px" }, 1000 );
+            $("#h2").animate({ "left": "-=150px" }, 1000 );
+            $("#h2").animate({ "top": "-=10px" }, 1000 );
+            console.log("move text");
+        }
+        setInterval(moveText, 2000);
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+    </head>
+    <body>
+        
+        <h3>Yhteenlaskukone 2000</h3>
+          <form id="f">
+            <input type=text id="nro1"><br>
+            <input type=text id="nro2"><br><br>
+            <button type="button" onclick="tulostaSumma(f.nro1.value, f.nro2.value)">Laske</button><br>
+            <div id="tulos"></div>  
+        </form>
+            
+        <script>
+            
+   
+            function tulostaSumma(a, b) {
+                document.getElementById("tulos").innerHTML = laskeSumma(a, b);
+            }
+            
+            function laskeSumma(a, b){
+                let summa =  parseInt(a) + parseInt(b);
+                return summa;
+            }
+
+        </script>
+    </body>
+</html>

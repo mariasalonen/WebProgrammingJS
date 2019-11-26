@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Harjoitus 8 - tehtävä 1</title>
+        <!-- Main library-->
+        <script src="https://unpkg.com/react@16/umd/react.development.js"></script>
+        <!-- DOM -->
+        <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+        <!-- JSX -->
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+        <style>
+            .box {
+	           border: 1px dashed #aaa; padding: 15px;
+	           }
+
+	       button {
+	           background-color: #069; border-radius: 5px;
+               color: #fff; margin-bottom: 5px;
+               padding: 5px 15px; border: none;
+	           }
+            .nappi{
+                background-color: #F793FF; border-radius: 5px;
+               color: #fff; margin-bottom: 5px;
+               padding: 5px 15px; border: none;
+            }
+        </style>
+    </head>
+    <body>
+        <h3>Tuota tämä ReactDOM.render()-metodilla:</h3>
+        <div id="malli" class="box">
+        <div>
+            <button>Nappi</button>
+        <p>Mieleni minun tekevi, aivoni ajattelevi</p>
+        </div>
+        </div>
+  
+  <h3>Minun ratkaisuni:</h3>
+  <div id="ratkaisu" class="box"></div>
+        
+        <script type="text/babel">
+
+        var kalevalaText = 'Mieleni minun tekevi, aivoni ajattelevi';
+
+        ReactDOM.render(
+    // Kirjoita pelkästäänn tähän ohjelmakoodi, joka tuottaa <div id="ratkaisu">-elementtiin
+    // saman lopputuloksen kuin <div id="malli">-elementissä on
+	// Käytä hyväksi määriteltyä muuttujaa kalevalaText 
+            <div>
+            <button className="nappi">Nappi</button>
+            <p>{kalevalaText}</p>
+            </div>
+            ,
+            document.getElementById('ratkaisu')
+        );
+    
+        </script>
+    </body>
+</html>

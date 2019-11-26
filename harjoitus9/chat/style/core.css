@@ -1,0 +1,80 @@
+body {
+font-family: "Lucida Console", Monaco, monospace;
+color: Black;
+margin: 0;
+padding: 0;
+}
+
+h1 {
+    font-family: "Lucida Console", Monaco, monospace;
+    background-color: #D191E8;
+    text-align: center;
+    color: white;
+    padding: 5px 0;
+    border-radius: 0 0 2px 2px;
+}
+
+ul {
+    list-style-type: square;
+    margin: 20px 0 20px 0;
+}
+
+#mastercontainer {
+    width: 600px;
+    background-color: #C4ADFF;
+    border-radius: 3px;
+    padding: 0 15px 15px;
+    margin: 10px auto;
+    border: 1px solid #ddd;
+}
+
+.chat-container {
+  border: 1px solid lightgray;
+  width: 90%;
+  margin: auto;
+}
+
+.msg-header {
+ background: #EDB3FF none;
+ text-align: center;
+ font-size: 0.9em;
+}
+
+.msg-header span {
+  background-color: #ffc;
+}
+
+.msg-row-container {
+  border-bottom: 1px dashed lightgray;
+}
+
+.msg-row {
+  width: 100%;
+  padding: 5px;
+  display: inline-block; /*inline element, which can have a width and a height.*/
+}
+
+.msg-input {
+  width: 90%;
+  margin: 0 auto;
+}
+
+
+.msg-input textarea {
+  width: 100%;
+  margin-top: 6px;
+  font-size: 0.9em;
+  padding: 3px;
+}
+
+.user-label {
+  font-size: 1.0em;
+}
+
+.chat-username {
+  color: gray;
+}
+
+.msg-time {
+  color: gray;
+}

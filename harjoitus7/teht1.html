@@ -1,0 +1,53 @@
+<! DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Harjoitus 7 - tehtävä 1</title>
+        <link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+   integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+   crossorigin=""/>
+         <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+   integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+   crossorigin=""></script>
+        <style>
+            #map{
+                height: 500px;
+                width: 700px;
+            }
+            
+            h1{
+                font-family: "Arial Black", Gadget, sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <h1>MM-ralli 2018</h1>
+        <div id="map"></div>
+        
+        <script>
+            let kartta = L.map('map').setView([62.242626, 25.747362], 14);
+            
+            L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibDQ2NDQiLCJhIjoiY2pvOGl4MTE0MDR0NjN2cXY1NDUyZ2prbSJ9.c5cPOHl52QBslyp9656I5g', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+                maxZoom: 18,
+        id: 'mapbox.streets'
+            }).addTo(kartta);
+            //marker
+            var marker = L.marker([62.242626, 25.747362]).addTo(kartta);
+            //ympyrä
+            var circle = L.circle([62.243060, 25.736808], {
+                color: 'yellow',
+                fillColor: '#FFFF03',
+                fillOpacity: 0.5,
+                radius: 300
+            }).addTo(kartta);
+            //neliö
+            var bounds = [[62.239103, 25.751618], [62.237407, 25.757201]];
+            var nelio = L.rectangle(bounds, {color: "#0DAAFF", weight: 1}).addTo(kartta);
+            
+            //pop upit
+            circle.bindPopup("<b>Harjun EK</b>");
+            nelio.bindPopup("<b>MM-ralli - Kilpailukeskus</b>");
+        </script>
+    </body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <style>
+            body {
+                font-family: 'Oswald', sans-serif;
+            }
+
+            #container {
+                width: 420px;
+                background-color:aliceblue;
+                border-radius: 3px;
+                padding: 0px 15px 0px 15px;
+                margin: 10px auto;
+                border: 1px solid #ddd;
+            }
+
+            h1 {
+                background-color: cadetblue;
+                text-align: center;
+                color: white;
+                padding: 5px;
+            }
+
+            ul {
+                list-style-type: square;
+                margin: 20px 0 20px 0;
+            }
+
+            input[type=text] {
+                border: 1px solid #ccc;
+                padding: 5px;
+                width: 300px;
+                font-size: 15px;
+            }
+
+            button {
+                border: 1px solid #ccc;
+                margin-left: 15px;
+                padding: 5px 15px;
+                font-size: 15px;
+            }
+            
+            .delete{
+                font-weight: bold;
+                color: red;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="container">
+            <h1>Tehtävälista</h1>
+            <input type="text" id="uusi"/>
+            <button id="add">Lisää</button>
+            <ul id="lista"></ul>
+        </div>
+        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+        <script src="js/teht2.js"></script>
+    </body>
+</html>

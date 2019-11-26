@@ -1,0 +1,19 @@
+{
+"talot":
+  [
+    {
+       "kuva":"kuvat/talo1.jpg",
+       "osoite":"Suistokatu 3, 00120 , Helsinki",
+       "koko":"5h+kt+2kh+s+wc+khh+vh+p",
+       "kuvaus":"Granholmin suunnittelema vuonna 1896 valmistunut Kivipalatsi  Pyyn korttelissa kuuluu tänäkin päivänä Helsingin kauneimpiin rakennuksiin.",
+       "hinta":"2 904 000 euroa"
+    },
+    {
+       "kuva":"kuvat/talo2.jpg",
+       "osoite":"Telakkakatu 3 A, 00150, Helsinki ",
+       "koko":"4h+k+halli+2xkh+wc+p",
+       "kuvaus":"Keittiöstä pariovet avaavat parvekkeen osaksi huonetilaa. Kaksi tilavaa kylpyhuonetta, toisessa amme. Joustavasti muunneltavia huonejakoja, paljon ikkunoita.",
+       "hinta":"1 044 000 euroa"
+    }
+  ]
+}

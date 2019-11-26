@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+
+   <head>
+      <title>Golfin kulta- ja etukentät</title>
+      <meta charset="UTF-8">
+
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.3/dist/leaflet.css"
+   integrity="sha512-Rksm5RenBEKSKFjgI3a41vrjkw4EVPlJ3+OiI65vTjIdo9brlAacEuKOiQ5OFh7cOI1bkDwLqdLw3Zg0cRJAAQ=="
+   crossorigin=""/>
+
+ <!-- Make sure you put this AFTER Leaflet's CSS -->
+ <script src="https://unpkg.com/leaflet@1.3.3/dist/leaflet.js"
+   integrity="sha512-tAGcCfR4Sc5ZP5ZoVz0quoZDYX5aCtEm/eu1KhSLj2c9eFrylXZknQYmxUssFaVJKvvc0dJQixhGjG2yXWiV9Q=="
+   crossorigin=""></script>
+
+
+<style type="text/css">
+   #mapid { height: 1024px; width: 1024px;} 
+
+.custom-popup .leaflet-popup-content-wrapper {
+  background:#ffc;
+  font-size:12px;
+  line-height:18px;
+  position: relative;
+  top: -30px
+  }
+.custom-popup .leaflet-popup-content-wrapper a {
+  color:rgba(0,0,255,0.5);
+  }
+.custom-popup .leaflet-popup-tip-container {
+  width:30px;
+  height:15px;
+  }
+.custom-popup .leaflet-popup-tip {
+  border-left:15px solid transparent;
+  border-right:15px solid transparent;
+  border-top:15px solid #2c3e50;
+  }
+
+</style>
+
+   </head>
+
+   <body>
+      <h3>Golfin kulta- ja etukentät</h3>
+
+<div class='custom-popup' id="mapid"></div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+<script>
+var mymap = L.map('mapid').setView([62.242626, 25.747362], 7);
+
+L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoieXVyaWFoYW5pIiwiYSI6ImNqanljZTFrMTBjMGEza25kMjBlZGZkdXYifQ.gxDr4e24ngDBS2ZmLueSuw', {
+    attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, <a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+    maxZoom: 18,
+    id: 'mapbox.streets'
+}).addTo(mymap);
+
+var yellowIcon = L.icon({
+    iconUrl: 'yellow-marker.png', 
+    iconSize:     [32, 32],
+    iconAnchor:   [16, 32], 
+    popupAnchor:  [-32, -32]
+});
+
+var redIcon = L.icon({
+    iconUrl: 'red-marker.png',
+    iconSize:     [32, 32],
+    iconAnchor:   [16, 32],
+    popupAnchor:  [-32, -32]
+});
+    
+    var blueIcon = L.icon({
+    iconUrl: 'blue-marker.png',
+    iconSize:     [32, 32],
+    iconAnchor:   [16, 32],
+    popupAnchor:  [-32, -32]
+});
+    
+    var greenIcon = L.icon({
+    iconUrl: 'green-marker.png',
+    iconSize:     [32, 32],
+    iconAnchor:   [16, 32],
+    popupAnchor:  [-32, -32]
+});
+
+
+$.ajax({
+           url: 'kentat.json'
+    }).fail(function() {
+            console.log("fail!");
+    }).done(function(data) {
+        // loop through all courses
+        $.each(data.kentat, function(index, kentta) {
+           // marker, get position lat and lng
+        
+            //console.log(kentta);
+            var marker = L.marker([kentta.lat, kentta.lng], {icon: yellowIcon}).addTo(mymap);
+ 
+            // ...
+            /* Tähän ohjelmakoodi, jolla JSON-tiedoston perusteella voidaan näyttää oikean värinen markkeri */
+          
+
+            /*
+
+                Tähän ohjelmakoodi, jossa markkeriin liitetään tapahtumakuuntelija klikkausta varten
+                sekä ohjelmoidaan toiminnot sitten popup-ikkunan informaation näyttämiselle JSON-
+                tiedostin tietojen perusteella.
+            */
+          });
+
+        }); // each
+   // }); // ajax done
+
+
+</script>
+
+
+   </body>
+
+</html>

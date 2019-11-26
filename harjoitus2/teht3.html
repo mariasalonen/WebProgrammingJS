@@ -1,0 +1,65 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Harjoitukset 2 / Tehtävä 2</title>
+</head>
+<body>
+<h3>Taulukon [11, 22, 33, 44] läpikäyntiä</h3>
+<p><code>for</code>- ja <code>for...of</code>-silmukoilla</p>
+<hr>
+<p id="results"></p>
+
+<script>
+
+let taulukko = [11, 22, 33, 44];
+let summa = 0, lkm = 0, ka; tulosrivit = '';
+
+    
+    let arraySum = (taulukko) => {
+        summa = taulukko.reduce(
+        ( accumulator, currentValue ) => accumulator + currentValue, 0);
+        console.log(summa);
+    }
+    
+    let arrayCount = (taulukko) => {
+        for (let value of taulukko) {
+        lkm++;
+        }
+        console.log(lkm);
+    }
+    
+        let arrayAvg = (taulukko, lkm) => {
+        ka = summa/lkm;
+        console.log(ka);
+    }
+    
+    let printArray = (taulukko) => {
+        for (let i = 0; i < taulukko.length; i++) {
+    tulosrivit += "taulukko[" + i + "] = " + taulukko[i] + "<br>";
+        }
+        return tulosrivit;
+        console.log(tulosrivit);
+    }
+
+    arraySum(taulukko);
+    arrayCount(taulukko);
+    arrayAvg(taulukko, lkm);
+    printArray(taulukko);
+    
+    let para = document.getElementById("results");
+    let sisalto = `
+                    Alkiot ovat:<br>
+                    ${tulosrivit}<br><br>;
+                    <br>Lukumäärä on:  ${lkm} <br>
+                    Summa on: ${summa} <br> 
+                    Keskiarvo on: ${ka};
+                    `;
+    para.innerHTML   = sisalto;
+    
+   
+
+</script>
+</body>
+</html>

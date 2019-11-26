@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Harjoitus 6 - tehtävä 1</title>
+    </head>
+    <body onload="draw()">
+        <canvas id="myCanvas" width="400" height="500" style="border:1px solid #000;"/>
+        <script>
+            
+            function draw(){
+                var canvas = document.getElementById ("myCanvas");
+                var ctx = canvas.getContext("2d");
+                //RUOTSI
+                //ylempi sininen
+                ctx.fillStyle="#0000FF";
+                ctx.fillRect(0,0,125,85);
+                //alempi sininen
+                ctx.fillStyle="#0000FF";
+                ctx.fillRect(0,130,125,85);
+                //iso ylempi sininen
+                ctx.fillStyle="#0000FF";
+                ctx.fillRect(175,0,175,85);
+                //iso alempi sininen
+                ctx.fillStyle="#0000FF";
+                ctx.fillRect(175,130,175,85);
+                //vaaka keltainen
+                ctx.fillStyle="#FFFF05";
+                ctx.fillRect(0,85,350,50);
+                //pysty keltainen
+                ctx.fillStyle="#FFFF05";
+                ctx.fillRect(125,0,50,215);
+                
+                //guyana lipun mitat 350x220
+                //punainen
+                ctx.fillStyle = "#E30000";
+                ctx.beginPath();
+                ctx.moveTo(0,225);
+                ctx.lineTo(175,325);
+                ctx.lineTo(0,445);
+                ctx.lineTo(0,225);
+                ctx.closePath();
+                ctx.fill();
+                //mustat viivat
+                ctx.lineWidth = 3;
+                ctx.strokeStyle = "#000";
+                ctx.moveTo(0,225);
+                ctx.lineTo(175,325);
+                ctx.stroke();
+                ctx.moveTo(175,325);
+                ctx.lineTo(0,445); 
+                ctx.stroke(); 
+                //keltainen
+                ctx.fillStyle = "#FFDC3F";
+                ctx.beginPath();
+                ctx.moveTo(0,225);
+                ctx.lineTo(350,325);
+                ctx.lineTo(0,445);
+                ctx.lineTo(175,325);
+                ctx.closePath();
+                ctx.fill();
+                //valk viiva
+                ctx.strokeStyle = "#fff";
+                ctx.lineWidth = 3;
+                ctx.moveTo(0,225);
+                ctx.lineTo(350,325);
+                ctx.stroke();
+                ctx.moveTo(350,325);
+                ctx.lineTo(0,445); 
+                ctx.stroke(); 
+                //vihreä ylä
+                ctx.fillStyle = "#01C250";
+                ctx.beginPath();
+                ctx.moveTo(0,225);
+                ctx.lineTo(350,225);
+                ctx.lineTo(350,325);
+                ctx.lineTo(0,225);
+                ctx.closePath();
+                ctx.fill();
+                //vihreä ala
+                ctx.fillStyle = "#01C250";
+                ctx.beginPath();
+                ctx.moveTo(0,445);
+                ctx.lineTo(350,325);
+                ctx.lineTo(350,445);
+                ctx.closePath();
+                ctx.fill();
+            }
+            
+        </script>
+    </body>
+</html>

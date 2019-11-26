@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Harjoitus 7 - tehtävä 3</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.js"></script>
+        
+    </head>
+    <body onload="drawchart();">
+        <h2>Autolaskuri</h2>
+        <button id="ford" onclick="addcar(0);">Ford</button>
+        <button id="opel" onclick="addcar(1);">Opel</button>
+        <button id="toyota" onclick="addcar(2);">Toyota</button>
+        <button id="nollaa" onclick="nollaa();">Nollaa</button>
+        <canvas id="myChart" width="400" height="400"></canvas>
+        
+        <script>
+
+            function drawchart(){
+                            var ctx = document.getElementById("myChart").getContext("2d");
+            myBarChart = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['Ford', 'Opel', 'Toyota'],
+                        datasets: [{
+                                label: "Autojen lukumäärät",
+                                data: [4, 2, 1],
+                                backgroundColor:["rgba(255, 13, 255, 1)","rgba(0, 219, 255, 1)","rgba(255, 255, 3, 1)"],
+                                }]
+                            },
+                    options: {
+                        responsive: false,
+                        scales: {
+                            yAxes: [{
+                                barThickness: 50,
+                                ticks: {
+                                    beginAtZero:true
+                                }
+                            }],
+                        xAxes: [{
+                            barThickness: 50
+                        }]
+                        }
+                    }
+                    
+            });
+
+            }
+            
+            function addcar(i){
+                    myBarChart.data.datasets[0].data[i] = myBarChart.data.datasets[0].data[i] + 1;
+                    myBarChart.update();
+            }
+            
+            function nollaa(){
+                    myBarChart.data.datasets[0].data[0] = 0;
+                    myBarChart.data.datasets[0].data[1] = 0;
+                    myBarChart.data.datasets[0].data[2] = 0;
+                    myBarChart.update();
+}
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,77 @@
+
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset='utf-8'>
+<title>Nettoasunto - Ilmianna loistokohde</title>
+<link rel="stylesheet" type="text/css" href="teht7.css">
+</head>
+<body>
+<header>
+     <h1>Nettoasunto - Ilmianna loistokohde</h1>
+</header>
+
+<form id="lomake" autocomplete="on" method="get" oninput="z1.value=a.value">
+  <fieldset>
+  <legend>Ilmiantaja</legend>
+    <label>Nimi:<br>
+      <input id="nimi" name="nimi" type="text" autofocus placeholder="Kirjoita nimesi tähän" required size="45">
+  </label>
+      <label>Puhelinnumero:<br>
+      <input id="puhnro" name="puhnro" type="tel" placeholder="Puhelinumero muodossa 040 xxx xxx x" required size="45"
+             pattern="([0-9]{3}( [0-9]{3})( [0-9]{3})( [0-9]{1}))">
+  </label>
+      <label>Email:<br>
+          <!--email-kenttään vaaditaan käyttäjältä sähköpostiosoite muuttamalla inputin typeksi "email" -->
+      <input id="email" name="email" type="email" placeholder="Kirjoita sähköpostiosoitteesi tähän" required size="45">
+  </label>
+  </fieldset>
+      <fieldset>
+  <legend>Ilmoituksen URL</legend>
+    <label>Myynti-ilmoituksen URL:<br>
+        <!--URL-kenttään vaaditaan käyttäjältä URL muuttamalla inputin typeksi URL -->
+      <input id="url" name="url" type="url" placeholder="Kopioi Etuoven kohdeURL tähän" required size="45">
+  </label>
+      
+  </fieldset>
+
+  <fieldset>
+  <legend>Asunnon pyyntihinta</legend>
+    <label id='hinta1'>
+ <output id='z1' name="z1" for="a">250</output> kEUR<br>
+    1 kEUR<input type="range" id="a" value="250" min="1" max="500">500 kEUR
+ </label>
+  </fieldset>
+    
+      <fieldset>
+  <legend>Arvioimani hinta</legend>
+    <label id='hinta2'>
+ <output id='z2' name="z2" for="b">250</output> kEUR<br>
+    1 kEUR<input type="range" id="b" value="250" min="1" max="500">500 kEUR
+ </label>
+  </fieldset>
+    
+    <fieldset>
+        <legend>Suosikkiasuinalueeni</legend><br>
+        <input list="alueet" id="asuinalue" name="asuinalue" type="name" required size="45">
+        <datalist id="alueet">
+            <option value="Aittorinne">
+            <option value="Palokka">
+            <option value="Kuokkala">
+            <option value="Keskusta">
+            <option value="Ristikivi">
+            <option value="Tikka">
+            <option value="Kortepohja"> 
+</datalist>
+    
+    </fieldset>
+
+<button type='submit' name='nappi' value='Ilmianna' id='nappi'>Ilmianna asunto!</button>
+</form>
+
+<footer>
+	<p>&copy; 2014 Q&D Software Ltd. Kaikki oikeudet pidätetään.</p>
+</footer>
+
+</body>
+</html>

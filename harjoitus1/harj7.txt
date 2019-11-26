@@ -1,0 +1,30 @@
+Ratkaisussa pyritään käyttämään käyttötarkoitukseen sopivimpia HTML5-elementtejä ja -syöttötyyppejä.
+
+Ulkoasuun liittyvät määritykset asetetaan CSS:n avulla. Ulkoasun suhteen pyritään täyttämään kuvassa näkyvät asiat ja asemoinnit.
+
+Dokumentin näkyvän osan kokonaisleveys on noin 450 pikseliä ja se on keskitetty suhteessa näkyvään selainikkunan osaan. 
+Kuvassa näkyvät uloimmat reunat eivät kuuluu dokumentin ulkoasuun. Tehtävän ratkaisussa riittää päästä lähelle tavoitetta parilla 
+HTML5-yhteistyökykyisellä selaimella.
+
+Kun lomake ladataan selaimeen, kohdistin siirtyy automaattisesti ensimmäiseen nimi-kenttään
+
+Nimi-, Puhelinnumero-, Email- ja Myynti-ilmoituksen URL -kentissä näkyy sinisellä (tai valitsemallasi värillä) tekstillä 
+kirjoitusvihje siihen saakka kunnes käyttäjä alkaa kirjoittamaan (Google: placeholder)
+
+Nimi-kenttään vaaditaan käyttäjältä jotakin syötettä. Puutteesta informoidaan käyttäjän yrittäessä lähettää lomaketta.
+
+Puhelinnumero-kenttään vaaditaan käyttäjältä puhelinnumero muodossa 040 xxx xxx x. Eli kolme numeroa, välilyönti, kolme numeroa, välilyönti,
+ jne. Puhelinnumeron muodon virheestä informoidaan käyttäjän yrittäessä lähettää lomaketta.
+
+Email-kenttään vaaditaan käyttäjältä sähköpostiosoite sillä tasolla kuin HTML5 osaa sitä vaatia. Puutteesta informoidaan käyttäjän 
+yrittäessä lähettää lomaketta.
+
+URL-kenttään vaaditaan käyttäjältä URL sillä tasolla kuin HTML5 osaa sitä vaatia. Puutteesta informoidaan käyttäjän yrittäessä lähettää 
+lomaketta.
+
+Asunnon pyyntihinta- ja Arvioimani hinta -liukusäätimien yläpuolella näkyy jatkuvasti päivittyvä lukema käyttäjän valinnan mukaan
+
+Suosikkiasuinalue toteutetaan datalist-elementillä. Lisää listaan esimerkiksi asuinalueita Aittorinne, Keskusta, Kortepohja, 
+Kuokkala ja Roninmäki.
+
+Painike "Ilmianna asunto!" toteuteutetaan button-elementillä sopivin tyylimäärityksin.

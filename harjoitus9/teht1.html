@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Harjoitus 9 - tehtävä 1</title>
+        <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+        <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+        <script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
+
+    </head>
+    <body>
+        <h1>Highscore</h1>
+        <div id="result"></div>
+        
+        <script type="text/babel">
+    let highscoreData = [
+          { id: 1, name: 'Jason', score: 4000 },
+          { id: 2, name: 'Make', score: 3000 },
+          { id: 3, name: 'Bill', score: 2000 },
+          { id: 4, name: 'Liza', score: 1000 }
+      ];
+
+    class Scores extends React.Component {
+        constructor(props) {
+                super(props);
+                this.state = {highscores: [], loaded: false};
+            }
+
+       
+        getHighscores () {
+            setTimeout(() => this.setState({highscores: highscoreData, loaded:true}), 3000);
+        }
+
+
+  render() {
+    if (this.state.loaded == false) {
+        return <span>Loading...</span>
+        {this.getHighscores()}
+    }
+   
+    else if (this.state.loaded == true) {
+      let scoreLi = highscoreData.map(function (id) {
+        return (
+          <li key={id}>{highscoreData.name} : {highscoreData.score}</li>
+        );
+      });
+      return (
+        <div>
+          <ul>{scoreLi}</ul>
+        </div>
+      );
+    }
+  }
+}
+
+
+ReactDOM.render(
+  <Scores />,
+  document.getElementById('result')
+);
+
+        </script>
+    </body>
+</html>

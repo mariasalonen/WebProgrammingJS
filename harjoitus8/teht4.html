@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+        <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+        <script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
+
+    <style>
+	 * {width: 400px; margin: auto}
+	.box {
+	  border: 1px dashed #000; padding: 15px; background-color: #adbed8;
+	}
+	input[type="text"] {width: 200px;}
+
+	button {
+	  background-color: #069; border-radius: 5px;
+	  color: #fff; margin-bottom: 5px;
+	  padding: 5px 15px; border: none;
+	}
+    </style>
+  </head>
+
+  <body>
+ 
+  <h3>Yhteenlaskin</h3>
+  <div id="ratkaisu" class="box"></div>
+
+    <script type="text/babel">
+
+      class Yhteenlaskin extends React.Component {
+
+        // Ohjelmakoodia tähän...
+        // joudut lisäämään määreitä myös input-elementteihin
+          
+          constructor(props) {
+        super(props);
+        this.state = {value: ''};
+        this.handleChange = this.handleChange.bind(this);
+      }
+          handleChange(event){
+            console.log(this.refs.n1.value);
+            console.log(this.refs.n2.value);
+            let summa = Number(this.refs.n1.value)  + Number(this.refs.n2.value);
+            this.setState({value: summa});
+            console.log(summa);
+          }
+
+	  render() {
+	    return (
+	      <div>
+		<table>
+		<tbody>
+		<tr><td>Luku1:</td><td><input type="text" ref="n1" onChange={this.handleChange}/></td></tr>
+		<tr><td>Luku2:</td><td><input type="text" ref="n2" onChange={this.handleChange}/></td></tr>
+		<tr><td>Tulos:</td><td><input type="text" value={this.state.value}/></td></tr>
+		</tbody>
+		</table>
+	      </div>
+	    );
+	  }
+	}
+
+	ReactDOM.render(
+	  <Yhteenlaskin />,
+	  document.getElementById('ratkaisu')
+	);
+
+    </script>
+
+  </body>
+</html>
+

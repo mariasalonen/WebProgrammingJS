@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+  <head>
+        <script src="https://unpkg.com/react@15.3.2/dist/react.js"></script>
+        <script src="https://unpkg.com/react-dom@15.3.2/dist/react-dom.js"></script>
+        <script src="https://unpkg.com/babel-core@5.8.38/browser.min.js"></script>
+
+    <style>
+	.box {
+	  border: 1px dashed #aaa; padding: 15px;
+	}
+
+	button {
+	  background-color: #069; border-radius: 5px;
+	  color: #fff; margin-bottom: 5px;
+	  padding: 5px 15px; border: none;
+	}
+        .nappi{
+                background-color: #F793FF; border-radius: 5px;
+               color: #fff; margin-bottom: 5px;
+               padding: 5px 15px; border: none;
+            }
+    </style>
+  </head>
+
+  <body>
+
+  <h3>Tuota tämä ReactDOM.render()-metodilla:</h3>
+  <div id="malli" class="box">
+    <div>
+      <button>Nappi</button>
+      <p>Mieleni minun tekevi, aivoni ajattelevi</p>
+    </div>
+  </div>
+  
+  <h3>Sinun ratkaisu:</h3>
+  <div id="ratkaisu" class="box"></div>
+
+    <script type="text/babel">
+
+	let kalevalaText = 'Mieleni minun tekevi, aivoni ajattelevi';
+
+      class BoxComponent extends React.Component {
+          
+          render(){
+              
+              return (
+                <div>
+                <button className="nappi">{this.props.buttonText}</button>
+                <p>{this.props.ptext}</p>
+                </div>
+              );
+          }
+	}
+
+
+	ReactDOM.render(
+  	 <BoxComponent buttonText="Nappi" ptext={kalevalaText}/>,
+	  document.getElementById('ratkaisu')
+	);
+    </script>
+
+  </body>
+</html>
+

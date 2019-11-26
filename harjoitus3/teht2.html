@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Harjoitus 3 - Tehtävä 2</title>
+        <style>
+            p{
+                display: inline;
+            }
+
+        </style>
+
+    </head>
+    <body>
+        
+        <p onclick="naytaMeloni()">Kuva1  |</p>
+        <p onclick="naytaOmena()">Kuva2  |</p>
+        <p onclick="naytaSitruuna()">Kuva3  |</p>
+        <p onclick="naytaPaaryna()">Kuva4  |</p><br/>
+        
+        <img id="image" src="img/meloni.png">
+
+        <script>
+            
+            let kuva1 = "img/meloni.png";
+            let kuva2 = "img/omena.png";
+            let kuva3 = "img/sitruuna.png";
+            let kuva4 = "img/paaryna.png";
+            
+            function naytaMeloni(){
+                var kuva = document.getElementById("image");
+                image.src = kuva1;
+
+            }
+            function naytaOmena(){
+                var kuva = document.getElementById("kuva1");
+                image.src = kuva2;
+
+            }
+            function naytaSitruuna(){
+                var kuva = document.getElementById("kuva1");
+                image.src = kuva3;
+
+            }
+            function naytaPaaryna(){
+                var kuva = document.getElementById("kuva1");
+                image.src = kuva4;
+
+            }
+
+        </script>
+    </body>
+</html>
